@@ -4,6 +4,7 @@
   "description": "A minimal React fullstack skeleton featuring hot reloading and a backend api server.",
   "main": "gulpfile.babel.js",
   "dependencies": {
+    "react": "^0.13.3",
     "whatwg-fetch": "^0.9.0"
   },
   "devDependencies": {
@@ -15,7 +16,7 @@
     "react-hot-loader": "^1.2.8",
     "source-map-support": "^0.3.2",
     "webpack": "^1.10.5",
-    "webpack-dev-server": "^1.10.1",
+    "webpack-dev-server": "^1.10.1"
   },
   "repository": {
     "type": "git",
