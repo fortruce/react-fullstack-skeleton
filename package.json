@@ -1,0 +1,21 @@
+{
+  "name": "skele",
+  "version": "0.0.1",
+  "description": "",
+  "author": "fortruce",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^5.8.20",
+    "babel-loader": "^5.3.2",
+    "html-webpack-plugin": "^1.6.0",
+    "nodemon": "^1.4.0",
+    "object-assign": "^3.0.0",
+    "react-hot-loader": "^1.2.8",
+    "source-map-support": "^0.3.2",
+    "webpack": "^1.10.5",
+    "webpack-dev-server": "^1.10.1"
+  },
+  "dependencies": {
+    "whatwg-fetch": "^0.9.0"
+  }
+}
