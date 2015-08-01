@@ -52,3 +52,6 @@ The following improvements need to be made:
   * Add loaders to support SASS and introduce a base stylesheet as an example.
 
 I welcome pull requests, but I am trying to keep this skeleton relatively minimal.
+
+[1]: http://gaearon.github.io/react-hot-loader/
+[2]: http://nodemon.io/
