@@ -3,7 +3,8 @@ React Fullstack Skeleton
 
 This skeleton project is meant to scaffold a typical fullstack React application.
 The skeleton uses webpack and gulp to manage the build and provide a great
-development experience. All React changes are automatically hot reloaded
+development experience. The frontend stack is React, react-router, and
+Redux. All React changes are automatically hot reloaded
 using [react-hot-loader][1]. Also, the backend server is automatically
 restarted upon any changes using [nodemon][2].
 
@@ -20,7 +21,10 @@ build/                  // webpack build output
   server.js             // backend server   built w/ webpack
 src/
   frontend/
-    index.js
+    components/         // React components
+    reducers/           // Redux reducers
+    Root.js             // Root component defining Routes
+    index.js            // React.render Root component
   server/
     index.js
 gulpfile.babel.js
