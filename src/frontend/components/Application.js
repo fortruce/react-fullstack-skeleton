@@ -1,7 +1,7 @@
 import React from 'react';
 import 'whatwg-fetch'; //polyfill
 
-export default class Test extends React.Component {
+export default class Application extends React.Component {
   constructor(props) {
     super(props);
 

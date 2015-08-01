@@ -1,4 +1,8 @@
 import React from 'react';
-import Test from './test';
+import Root from './Root';
+import HashHistory from 'react-router/lib/HashHistory';
 
-React.render(<Test />, document.getElementById('container'));
+React.render(
+  <Root history={ new HashHistory() } />,
+  document.getElementById('container')
+);
