@@ -1,17 +1,14 @@
 import React from 'react';
-import 'whatwg-fetch'; //polyfill
+import { fetchShouts } from '../actions';
+import { connect } from 'react-redux';
 
-export default class Application extends React.Component {
+class Application extends React.Component {
   constructor(props) {
     super(props);
+  }
 
-    this.state = {
-      shouts: []
-    };
-
-    fetch('/api')
-      .then(resp => resp.json())
-      .then(json => this.setState(json));
+  componentWillMount() {
+    this.props.dispatch(fetchShouts());
   }
 
   render() {
@@ -19,9 +16,11 @@ export default class Application extends React.Component {
       <div>
         <h1>Shouts</h1>
         <ul>
-          { this.state.shouts.map(s => <li>{s}</li>) }
+          { this.props.shouts.map((s, i) => <li key={i}>{s}</li>) }
         </ul>
       </div>
     );
   }
 }
+
+export default connect(state => ({ shouts: state.shouts }))(Application);

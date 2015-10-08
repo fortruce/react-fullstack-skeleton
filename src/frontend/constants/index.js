@@ -1,0 +1,1 @@
+export const RECEIVED_SHOUTS = 'RECEIVED_SHOUTS';

@@ -1,8 +1,12 @@
-import React from 'react';
+import ReactDOM from 'react-dom';
 import Root from './Root';
-import HashHistory from 'react-router/lib/HashHistory';
+import { createHistory } from 'history';
 
-React.render(
-  <Root history={ new HashHistory() } />,
+// Import required so that React is available even
+// though it is not used in this file
+import React from 'react';
+
+ReactDOM.render(
+  <Root history={ createHistory() } />,
   document.getElementById('container')
 );

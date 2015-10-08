@@ -5,17 +5,11 @@
 
 var webpack = require('webpack');
 var path = require('path');
-var assign = require('object-assign');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var defaultConfig = {
-  devtool: 'sourcemap'
-};
-
-var frontendConfig = assign({}, defaultConfig, {
+var frontendConfig = {
   entry: [
-    'webpack-dev-server/client?http://localhost:3000',
-    'webpack/hot/only-dev-server',
+    'webpack-hot-middleware/client',
     './src/frontend/index.js'
   ],
 
@@ -23,6 +17,8 @@ var frontendConfig = assign({}, defaultConfig, {
     filename: 'bundle.js',
     path: path.join(__dirname, 'build', 'public')
   },
+
+  devtool: 'sourcemap',
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -40,7 +36,7 @@ var frontendConfig = assign({}, defaultConfig, {
       {
         test: /\.js$/,
         include: path.join(__dirname, 'src', 'frontend'),
-        loaders: ['react-hot', 'babel?stage=0']
+        loaders: ['babel']
       },
       {
         test: /\.scss$/,
@@ -49,15 +45,17 @@ var frontendConfig = assign({}, defaultConfig, {
       }
     ]
   }
-});
+};
 
-var serverConfig = assign({}, defaultConfig, {
+var serverConfig = {
   entry: './src/server/index.js',
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'server.js',
     libraryTarget: 'commonjs2'
   },
+
+  devtool: 'sourcemap',
 
   target: 'node',
   // do not include polyfills or mocks for node stuff
@@ -85,10 +83,10 @@ var serverConfig = assign({}, defaultConfig, {
         // transpile all .js files using babel
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel?stage=0'
+        loader: 'babel'
       }
     ]
   }
-});
+};
 
 module.exports = [frontendConfig, serverConfig];

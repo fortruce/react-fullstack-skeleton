@@ -13,6 +13,18 @@ app.get('/api', (req, res) => {
   });
 });
 
+app.get('/api/test', (req, res) => {
+  res.json({
+    hello: "world"
+  });
+});
+
+app.post('/api/test/test', (req, res) => {
+  res.json({
+    hello: "world'"
+  });
+});
+
 app.listen(8080, function(err) {
   if (err)
     return console.log(err);

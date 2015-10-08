@@ -23,6 +23,8 @@ src/
   frontend/
     components/         // React components
     reducers/           // Redux reducers
+    actions/		// Redux action creators
+    constants/		// Constants
     Root.js             // Root component defining Routes
     index.js            // React.render Root component
   server/
